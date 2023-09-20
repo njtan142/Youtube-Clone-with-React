@@ -3,6 +3,7 @@ import "./App.css";
 import Header from "./components/Header";
 import SideBarMenu from "./components/SideBarMenu";
 import Login from "./components/Login";
+import SignUp from "./components/SignUp";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,13 +22,13 @@ export default function Login() {
     console.log("form submitted");
   };
 
-  const handleToRegister = () =>{
-    navigate("/register");
+  const handleToLogin = () =>{
+    navigate("/login");
   }
   return (
     <Container>
       <div className="login-module">
-        <h1>Login to Youtube (Clone)</h1>
+        <h1>Register to Youtube (Clone)</h1>
         <form onSubmit={handleSubmit}>
           <div className="input-and-label">
             <label htmlFor="username">Username</label>
@@ -50,8 +50,8 @@ export default function Login() {
           </div>
           <button type="submit">Login</button>
         </form>
-        <div className="to-register">
-          <p onClick={handleToRegister}>No account? Register</p>
+        <div className="to-login">
+          <p onClick={handleToLogin}>Login instead</p>
         </div>
       </div>
     </Container>
@@ -109,7 +109,7 @@ const Container = styled.div`
       }
     }
 
-    .to-register {
+    .to-login {
       width: 300px;
       display: flex;
       justify-content: flex-end;
