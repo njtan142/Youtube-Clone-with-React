@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header";
 import SideBarMenu from "./components/SideBarMenu";
+import Login from "./components/Login";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -12,6 +13,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </BrowserRouter>
   );
