@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
+import { signInWithEmailAndPassword } from "firebase/auth";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -16,13 +18,26 @@ export default function Login() {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can handle form submission and authentication here
-    console.log("form submitted");
+    try {
+      await signInWithEmailAndPassword(auth, username, password);
+      alert("Logged in successfully!");
+      navigate("/");
+    } catch (error) {
+      console.log(error.code)
+      let message = error.code.toString();
+      alert("Login error: " +
+        error.code
+          .split("-")
+          .join(" ")
+          .split("/")[1]
+      );
+    }
+
   };
 
-  const handleToRegister = () =>{
+  const handleToRegister = () => {
     navigate("/register");
   }
   return (
@@ -37,6 +52,7 @@ export default function Login() {
               id="username"
               value={username}
               onChange={handleUsernameChange}
+              required
             />
           </div>
           <div className="input-and-label">
@@ -46,6 +62,7 @@ export default function Login() {
               id="password"
               value={password}
               onChange={handlePasswordChange}
+              required
             />
           </div>
           <button type="submit">Login</button>

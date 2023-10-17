@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function SignUp() {
   const [username, setUsername] = useState("");
@@ -16,10 +18,22 @@ export default function SignUp() {
     setPassword(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // You can handle form submission and authentication here
-    console.log("form submitted");
+    try {
+      await createUserWithEmailAndPassword(auth, username, password);
+      alert("Created account successfully!");
+      navigate("/");
+    } catch (error) {
+      console.log(error.code)
+      let message = error.code.toString();
+      alert("Login error: " +
+        error.code
+          .split("-")
+          .join(" ")
+          .split("/")[1]
+      );
+    }
   };
 
   const handleToLogin = () =>{
@@ -37,6 +51,7 @@ export default function SignUp() {
               id="username"
               value={username}
               onChange={handleUsernameChange}
+              required
             />
           </div>
           <div className="input-and-label">
@@ -46,6 +61,7 @@ export default function SignUp() {
               id="password"
               value={password}
               onChange={handlePasswordChange}
+              required
             />
           </div>
           <button type="submit">Login</button>
