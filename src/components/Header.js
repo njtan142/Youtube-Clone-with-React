@@ -1,12 +1,12 @@
 import styled from "styled-components";
 import MenuHeader from "./MenuHeader";
 import React, { useState, useEffect } from "react";
-import { ReactComponent as SearchIcon } from "./search.svg";
-import { ReactComponent as VoiceIcon } from "./voicetype.svg";
-import { ReactComponent as UploadIcon } from "./upload.svg";
-import { ReactComponent as NotificationIcon } from "./notifications.svg";
-import { ReactComponent as CancelIcon } from "./cancel.svg";
-import { ReactComponent as SignInIcon } from "./sign_in.svg";
+import { ReactComponent as SearchIcon } from "./icons/search.svg";
+import { ReactComponent as VoiceIcon } from "./icons/voicetype.svg";
+import { ReactComponent as UploadIcon } from "./icons/upload.svg";
+import { ReactComponent as NotificationIcon } from "./icons/notifications.svg";
+import { ReactComponent as CancelIcon } from "./icons/cancel.svg";
+import { ReactComponent as SignInIcon } from "./icons/sign_in.svg";
 import {useNavigate} from "react-router-dom"
 
 import AccountMenu from "./AccountMenu";

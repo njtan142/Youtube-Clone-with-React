@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import MenuHeader from "./MenuHeader";
-import { ReactComponent as HomeIcon } from "./home.svg";
-import { ReactComponent as ShortsIcon } from "./shorts.svg";
-import { ReactComponent as SubscriptionsIcon } from "./supscriptions.svg";
-import { ReactComponent as LibraryIcon } from "./library.svg";
-import { ReactComponent as HistoryIcon } from "./history.svg";
-import { ReactComponent as YourVideosIcon } from "./your_videos.svg";
-import { ReactComponent as YourMoviesIcon } from "./your_movies.svg";
-import { ReactComponent as WatchLaterIcon } from "./watch_later.svg";
-import { ReactComponent as ShowMoreIcon } from "./show-more.svg";
+import { ReactComponent as HomeIcon } from "./icons/home.svg";
+import { ReactComponent as ShortsIcon } from "./icons/shorts.svg";
+import { ReactComponent as SubscriptionsIcon } from "./icons/supscriptions.svg";
+import { ReactComponent as LibraryIcon } from "./icons/library.svg";
+import { ReactComponent as HistoryIcon } from "./icons/history.svg";
+import { ReactComponent as YourVideosIcon } from "./icons/your_videos.svg";
+import { ReactComponent as YourMoviesIcon } from "./icons/your_movies.svg";
+import { ReactComponent as WatchLaterIcon } from "./icons/watch_later.svg";
+import { ReactComponent as ShowMoreIcon } from "./icons/show-more.svg";
 
 export default function SideBarMenu({ openCallback, onMenuClick }) {
   const defaultProfileImage =

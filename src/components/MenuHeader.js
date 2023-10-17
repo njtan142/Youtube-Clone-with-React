@@ -1,8 +1,8 @@
 // MenuHeader.js
 import React from "react";
 import styled from "styled-components";
-import { ReactComponent as MenuBurgerLogo } from "./menuburger.svg";
-import { ReactComponent as YTLogo } from "./youtube.svg";
+import { ReactComponent as MenuBurgerLogo } from "./icons/menuburger.svg";
+import { ReactComponent as YTLogo } from "./icons/youtube.svg";
 
 const MenuHeader = ({onMenuClick}) => {
   return (
